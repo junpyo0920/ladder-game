@@ -33,14 +33,17 @@ public class Main {
     private static String[] makeLine() {
         String[] line = new String[userCount * 2 - 1];
         for (int j = 0; j < userCount * 2 - 1; j++) {
-            if (j % 2 == 0) {
-                line[j] = "|";
-                continue;
-            }
-            boolean randomLine = new Random().nextBoolean();
-            line[j] = randomLine ? "-" : " ";
+            line[j] = makePoll(j);
         }
         return line;
+    }
+
+    private static String makePoll(int j) {
+        if (j % 2 == 0) {
+            return "|";
+        }
+        boolean randomLine = new Random().nextBoolean();
+        return  randomLine ? "-" : " ";
     }
 
     static void getGameDate() {
