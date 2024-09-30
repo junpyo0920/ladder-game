@@ -16,11 +16,15 @@ public class Main {
 
     private static void printLadder() {
         for (int i = 0; i < ladder.length; i++) {
-            for (int j = 0; j < ladder[i].length; j++) {
-                System.out.print(ladder[i][j]);
-            }
-            System.out.println();
+            printLine(i);
         }
+    }
+
+    private static void printLine(int i) {
+        for (int j = 0; j < ladder[i].length; j++) {
+            System.out.print(ladder[i][j]);
+        }
+        System.out.println();
     }
 
     private static void makeLadder() {
