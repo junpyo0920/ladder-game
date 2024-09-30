@@ -6,28 +6,41 @@ import java.util.Scanner;
 public class Main {
     static int userCount;
     static int ladderHeight;
+    static String[][] ladder;
     
     public static void main(String[] args) {
         getGameDate();
         makeLadder();
+        printLadder();
     }
 
-    private static void makeLadder() {
-        for (int i = 0; i < ladderHeight; i++) {
-            makeLine();
+    private static void printLadder() {
+        for (int i = 0; i < ladder.length; i++) {
+            for (int j = 0; j < ladder[i].length; j++) {
+                System.out.print(ladder[i][j]);
+            }
             System.out.println();
         }
     }
 
-    private static void makeLine() {
+    private static void makeLadder() {
+        ladder = new String[ladderHeight][];
+        for (int i = 0; i < ladderHeight; i++) {
+            ladder[i] = makeLine();
+        }
+    }
+
+    private static String[] makeLine() {
+        String[] line = new String[userCount * 2 - 1];
         for (int j = 0; j < userCount * 2 - 1; j++) {
             if (j % 2 == 0) {
-                System.out.print("|");
+                line[j] = "|";
                 continue;
             }
             boolean randomLine = new Random().nextBoolean();
-            System.out.print(randomLine ? "-" : " ");
+            line[j] = randomLine ? "-" : " ";
         }
+        return line;
     }
 
     static void getGameDate() {
