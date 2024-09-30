@@ -9,7 +9,7 @@ public class Main {
     private static String[][] ladder;
     
     public static void main(String[] args) {
-        getGameDate();
+        getGameData();
         makeLadder();
         printLadder();
     }
@@ -50,7 +50,7 @@ public class Main {
         return  randomLine ? "-" : " ";
     }
 
-    private static void getGameDate() {
+    private static void getGameData() {
         Scanner sc = new Scanner(System.in);
         System.out.println("참여할 사람은 몇 명인가요?");
         userCount = sc.nextInt();
