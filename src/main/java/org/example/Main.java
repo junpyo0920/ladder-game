@@ -6,10 +6,13 @@ import java.util.Scanner;
 public class Main {
     static int userCount;
     static int ladderHeight;
-
+    
     public static void main(String[] args) {
         getGameDate();
+        makeLadder();
+    }
 
+    private static void makeLadder() {
         for (int i = 0; i < ladderHeight; i++) {
             for (int j = 0; j < userCount * 2 - 1; j++) {
                 if (j % 2 == 0) {
