@@ -14,15 +14,19 @@ public class Main {
 
     private static void makeLadder() {
         for (int i = 0; i < ladderHeight; i++) {
-            for (int j = 0; j < userCount * 2 - 1; j++) {
-                if (j % 2 == 0) {
-                    System.out.print("|");
-                    continue;
-                }
-                boolean randomLine = new Random().nextBoolean();
-                System.out.print(randomLine ? "-" : " ");
-            }
+            makeLine();
             System.out.println();
+        }
+    }
+
+    private static void makeLine() {
+        for (int j = 0; j < userCount * 2 - 1; j++) {
+            if (j % 2 == 0) {
+                System.out.print("|");
+                continue;
+            }
+            boolean randomLine = new Random().nextBoolean();
+            System.out.print(randomLine ? "-" : " ");
         }
     }
 
